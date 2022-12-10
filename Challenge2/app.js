@@ -18,11 +18,13 @@ Draw: 3
 Lose: 0
 */
 const fs = require("fs");
-const { openStdin } = require("process");
+let gameArr = [];
 
+//read file of inputs and use function to solve
 fs.readFile("input.txt", (err, data) => {
   if (err) throw err;
-  //console.log(calcScore(data.toString().split("\n")));
+  gameArr = data.toString().split("\n");
+  console.log(addArr(calcScore(gameArr)));
 });
 
 //Function that calculates the score of the rounds
@@ -62,9 +64,17 @@ function calcScore(arr) {
         }
         break;
     }
-    console.log(score);
     return score;
   });
   //add all the scores in the array
   return newArr;
+}
+
+//Function used to sum all elements of an array
+function addArr(arr) {
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    total = arr[i] + total;
+  }
+  return total;
 }
