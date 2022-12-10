@@ -35,14 +35,15 @@ function calcScore(arr) {
     let opnt = set.charAt(0);
     let plyr = set.charAt(2);
     let score = 0;
+    //Scores updated for part 2 of challenge
     switch (opnt) {
       case "A":
         if (plyr === "X") {
-          score = 4;
-        } else if (plyr === "Y") {
-          score = 8;
-        } else if (plyr === "Z") {
           score = 3;
+        } else if (plyr === "Y") {
+          score = 4;
+        } else if (plyr === "Z") {
+          score = 8;
         }
         break;
       case "B":
@@ -56,11 +57,11 @@ function calcScore(arr) {
         break;
       case "C":
         if (plyr === "X") {
-          score = 7;
-        } else if (plyr === "Y") {
           score = 2;
-        } else if (plyr === "Z") {
+        } else if (plyr === "Y") {
           score = 6;
+        } else if (plyr === "Z") {
+          score = 7;
         }
         break;
     }
