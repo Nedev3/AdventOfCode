@@ -29,7 +29,7 @@ fs.readFile("input.txt", (err, data) => {
 function calcScore(arr) {
   let newArr = [...arr];
   //convert the elements in the array into scores
-  newArr.map((set) => {
+  newArr = newArr.map((set) => {
     let opnt = set.charAt(0);
     let plyr = set.charAt(2);
     let score = 0;
@@ -62,7 +62,8 @@ function calcScore(arr) {
         }
         break;
     }
-    set = score;
+    console.log(score);
+    return score;
   });
   //add all the scores in the array
   return newArr;
